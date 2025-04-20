@@ -1,38 +1,721 @@
 .App {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Common Section Styles */
+.section-subtitle {
+  display: block;
+  color: #4a90e2;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #4a90e2 0%, #5637d1 100%);
+  margin: 0 auto 1.5rem;
+}
+
+.section-description {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80') no-repeat center center;
+  background-size: cover;
+  padding: 180px 0;
+  color: white;
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 90%;
+}
+
+.hero-btn {
+  background: linear-gradient(135deg, #4a90e2 0%, #5637d1 100%) !important;
+  border: none !important;
+  padding: 0.8rem 2rem !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.hero-btn-secondary {
+  border: 2px solid white !important;
+  padding: 0.8rem 2rem !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+  transition: background-color 0.3s ease, transform 0.3s ease !important;
+}
+
+.hero-btn-secondary:hover {
+  background-color: white !important;
+  color: #333 !important;
+  transform: translateY(-3px);
+}
+
+/* Features Section Styles */
+.features-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.feature-card {
+  border: none !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.feature-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: -40px auto 20px;
+  background: linear-gradient(135deg, #4a90e2 0%, #5637d1 100%);
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3);
+}
+
+.feature-icon {
+  color: white;
+  font-size: 2rem;
+}
+
+.feature-card .card-body {
+  padding: 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.feature-card .card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.feature-card .card-text {
+  color: #666;
+  margin-bottom: 1.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.feature-link {
+  color: #4a90e2;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: color 0.3s ease;
+}
+
+.feature-link i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-link:hover {
+  color: #5637d1;
+}
+
+.feature-link:hover i {
+  transform: translateX(5px);
+}
+
+/* About Section Styles */
+.about-section {
+  padding: 80px 0;
+}
+
+.about-image-container {
+  position: relative;
+  padding-right: 30px;
+}
+
+.about-image {
+  width: 100%;
+  height: 500px;
+  background: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80') no-repeat center center;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-experience {
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  background: linear-gradient(135deg, #4a90e2 0%, #5637d1 100%);
   color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 150px;
 }
 
-.App-link {
-  color: #61dafb;
+.about-experience .years {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.about-experience .text {
+  display: block;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.about-content {
+  padding-left: 30px;
+}
+
+.about-content .section-divider {
+  margin: 0 0 1.5rem;
+}
+
+.about-text {
+  margin-bottom: 1.5rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+.about-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.about-features li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.about-features i {
+  color: #4a90e2;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.about-btn {
+  background: linear-gradient(135deg, #4a90e2 0%, #5637d1 100%) !important;
+  border: none !important;
+  padding: 0.8rem 2rem !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.about-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3) !important;
+}
+
+/* Products Section Styles */
+.products-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.product-card {
+  border: none !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.product-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #4a90e2;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.product-card .card-img-top {
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Specific height for product cards in the OUR LATEST PRODUCTS section */
+.products-section .product-card {
+  height: auto !important;
+}
+
+.products-section .product-card .card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+.btn-shop{
+  background: #ffffff00 !important;
+  border: 1px solid #ffffff00 !important;
+  color: #3b3b3b !important;
+  font-weight: 400 !important;
+  transition: background-color 0.3s ease;
+  border-radius: 0;
+}
+
+.btn-shop:hover {
+  background-color: #f5f5f5 !important;
+  color: #333 !important;
+}
+
+.prod-name {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.prod-price {
+  font-size: 1.1rem;
+}
+.product-category {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  height: 2.4em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.product-rating {
+  color: #ffc107;
+  font-size: 0.9rem;
+}
+
+.product-rating span {
+  color: #666;
+}
+
+.product-price {
+  font-weight: 600;
+}
+
+.current-price {
+  font-size: 1.2rem;
+  color: #4a90e2;
+}
+
+.old-price {
+  font-size: 0.9rem;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+
+.buy-now-btn {
+  background: linear-gradient(135deg, #4a90e2 0%, #5637d1 100%) !important;
+  border: none !important;
+  border-radius: 5px !important;
+  font-weight: 500 !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.buy-now-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3) !important;
+}
+
+.add-to-cart-btn {
+  border-color: #4a90e2 !important;
+  color: #4a90e2 !important;
+  border-radius: 5px !important;
+  font-weight: 500 !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #4a90e2 !important;
+  color: white !important;
+}
+
+.view-all-btn {
+  border-color: #4a90e2 !important;
+  color: #4a90e2 !important;
+  border-radius: 50px !important;
+  padding: 0.8rem 2.5rem !important;
+  font-weight: 500 !important;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease !important;
+}
+
+.view-all-btn:hover {
+  background-color: #4a90e2 !important;
+  color: white !important;
+  transform: translateY(-3px);
+}
+
+.view-all-btn i {
+  transition: transform 0.3s ease;
+}
+
+.view-all-btn:hover i {
+  transform: translateX(5px);
+}
+
+/* New Arrivals Section Styles */
+.new-arrivals-section {
+  background-color: #f8f9fa;
+}
+
+.product-description {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Testimonial Section Styles */
+.testimonial-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.testimonial-card {
+  border: none !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.3s ease !important;
+  height: 100%;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+}
+
+.testimonial-rating {
+  margin-bottom: 1rem;
+  color: #ffc107;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-author-info {
+  flex: 1;
+}
+.accordion-button{
+  background: #ffffff;
+  color: #1f1f1f;
+}
+.accordion-button:not(.collapsed) {
+  background: #5a738f;
+  color: #fff;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: none !important;
+  transform: var(--bs-accordion-btn-icon-transform);
+  color:#ffffff !important;
+}
+.accordion-button:not(.collapsed)::after.rotate{
+  transform: rotate(45%);
+}
+.accordion-button::after {
+  color:#1f1f1f !important;
+  flex-shrink: 0;
+  width: var(--bs-accordion-btn-icon-width);
+  height: var(--bs-accordion-btn-icon-width);
+  margin-left: auto;
+  content: "";
+  background-image: none !important;
+  background-repeat: no-repeat;
+  background-size: var(--bs-accordion-btn-icon-width);
+  transition: var(--bs-accordion-btn-icon-transition);
+}
+.author-name {
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+
+.author-title {
+  margin-bottom: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Category Buttons Styles */
+.category-btn,
+.btn-category,
+[class*="category-button"],
+[class*="shop-category"],
+.btn-bathroom,
+.bathroom-btn,
+.category-section .btn,
+.shop-by-category .btn,
+button[class*="bathroom"],
+.btn[href*="bathroom"],
+.btn[href*="room"],
+.btn[href*="category"],
+.category-image-button,
+.category-nav .btn,
+[class*="room"] .btn,
+[class*="bath"] .btn,
+[class*="category"] .btn {
+  min-width: 120px !important; /* Set a consistent width for all category buttons */
+  width: 120px !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: inline-block !important;
+}
+
+/* Ensure all buttons on category images have the exact same dimensions as the bathroom button */
+.shop-by-category img + .btn,
+.category-image .btn,
+.category-item .btn,
+[class*="category"] img + .btn,
+[class*="category"] .image-container .btn,
+[class*="category"] .card .btn,
+.btn-bathroom,
+.bathroom-btn,
+button[class*="bathroom"] {
+  width: 120px !important; /* Fixed width instead of min-width */
+  height: 40px !important; /* Fixed height to match bathroom button */
+  padding: 8px 16px !important; /* Consistent padding */
+  font-size: 14px !important; /* Consistent font size */
+  line-height: 1.5 !important; /* Consistent line height */
+  border-radius: 4px !important; /* Consistent border radius */
+  margin: 5px !important; /* Consistent margin */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Additional specific styling for buttons on category images */
+.category-image-overlay .btn,
+.category-card .btn,
+.shop-category-item .btn,
+.category-thumbnail .btn,
+.room-category .btn,
+.category-box .btn,
+.category-grid-item .btn,
+.category-banner .btn,
+.category-section .image-wrapper .btn,
+.shop-by-room .btn,
+.shop-by-category .btn,
+.category-slider .btn,
+.category-collection .btn,
+.room-selector .btn,
+.bathroom-category .btn,
+.living-room-category .btn,
+.bedroom-category .btn,
+.dining-category .btn,
+.office-category .btn,
+.outdoor-category .btn,
+.kitchen-category .btn,
+.decor-category .btn {
+  width: 120px !important;
+  height: 40px !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  border-radius: 4px !important;
+  margin: 5px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  z-index: 10 !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #333 !important;
+  border: 1px solid #ddd !important;
+  transition: all 0.3s ease !important;
+  text-transform: capitalize !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 2.8rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .section-title {
+    font-size: 2rem;
   }
+  
+  .about-image {
+    height: 400px;
+  }
+  
+  .about-content {
+    padding-left: 0;
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 120px 0;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero-btn {
+    margin-bottom: 1rem;
+  }
+  
+  .about-image-container {
+    padding-right: 0;
+  }
+  
+  .about-experience {
+    right: 20px;
+  }
+}
+
+/* Ensure all buttons on category images have the exact same dimensions as the bathroom button */
+.shop-by-category img + .btn,
+.category-image .btn,
+.category-item .btn,
+[class*="category"] img + .btn,
+[class*="category"] .image-container .btn,
+[class*="category"] .card .btn,
+.btn-bathroom,
+.bathroom-btn,
+button[class*="bathroom"],
+.category-image-overlay .btn,
+.category-card .btn,
+.shop-category-item .btn,
+.category-thumbnail .btn,
+.room-category .btn,
+.category-box .btn,
+.category-grid-item .btn,
+.category-banner .btn,
+.category-section .image-wrapper .btn,
+.shop-by-room .btn,
+.shop-by-category .btn,
+.category-slider .btn,
+.category-collection .btn,
+.room-selector .btn,
+.bathroom-category .btn,
+.living-room-category .btn,
+.bedroom-category .btn,
+.dining-category .btn,
+.office-category .btn,
+.outdoor-category .btn,
+.kitchen-category .btn,
+.decor-category .btn {
+  width: 120px !important; /* Fixed width instead of min-width */
+  height: 40px !important; /* Fixed height to match bathroom button */
+  padding: 8px 16px !important; /* Consistent padding */
+  font-size: 14px !important; /* Consistent font size */
+  line-height: 1.5 !important; /* Consistent line height */
+  border-radius: 4px !important; /* Consistent border radius */
+  margin: 5px !important; /* Consistent margin */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  z-index: 10 !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #333 !important;
+  border: 1px solid #ddd !important;
+  transition: all 0.3s ease !important;
+  text-transform: capitalize !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
 }

@@ -1,0 +1,249 @@
+.hero-slider-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slider {
+  position: relative;
+}
+
+.hero-slide {
+  position: relative;
+  height: 600px; /* Adjust height as needed */
+  outline: none;
+}
+
+.hero-slide-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex !important;
+  align-items: center;
+}
+
+/* Ensure smooth horizontal sliding */
+.slick-track {
+  display: flex !important;
+}
+
+/* Text and button styling */
+.hero-content-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Animation for elements coming from bottom */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-up {
+  animation: slideUp 0.8s ease forwards;
+  opacity: 0;
+  /* Start with elements invisible */
+  visibility: hidden;
+  /* Add animation delay to ensure proper timing */
+  animation-delay: 500ms;
+}
+
+.animate-delay {
+  /* Add additional delay for the button */
+  animation-delay: 1200ms;
+}
+
+/* Add animation classes to control visibility */
+.animate-visible {
+  visibility: visible;
+}
+
+.whats-new-text {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+
+.transparent-btn {
+  background-color: rgba(255, 255, 255, 0.2) !important; /* Semi-transparent white background */
+  backdrop-filter: blur(5px) !important; /* Add blur effect */
+  -webkit-backdrop-filter: blur(5px) !important; /* For Safari */
+  border: 2px solid rgba(255, 255, 255, 0.6) !important;
+  color: white !important;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 8px 16px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 1rem;
+  border-radius: 0 !important; /* Remove border radius */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease !important;
+  width: 120px !important;
+  height: 40px !important;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1) !important; /* Subtle white glow */
+}
+
+.transparent-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: height 0.3s ease;
+  z-index: -1;
+}
+
+.transparent-btn:hover::before {
+  height: 100%;
+}
+
+.transparent-btn:hover,
+.transparent-btn:focus,
+.transparent-btn:active {
+  color: white !important;
+  backdrop-filter: blur(8px) !important; /* Increase blur on hover */
+  -webkit-backdrop-filter: blur(8px) !important;
+  background-color: rgba(255, 255, 255, 0.3) !important; /* More white on hover */
+  border-color: rgba(255, 255, 255, 0.8) !important; /* More visible border on hover */
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2) !important; /* Enhanced white glow */
+}
+
+/* Slick slider custom styles */
+.hero-slider .slick-dots {
+  bottom: 25px;
+  z-index: 5;
+}
+
+.hero-slider .slick-dots li button:before {
+  color: white;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.hero-slider .slick-dots li.slick-active button:before {
+  color: white;
+  opacity: 1;
+}
+
+/* Disable user interaction */
+.hero-slider .slick-list {
+  cursor: default;
+}
+
+.hero-slider .slick-slide {
+  pointer-events: auto;
+}
+
+.hero-content-wrapper {
+  pointer-events: auto;
+}
+
+/* Ensure all buttons in the hero slider have the same dimensions */
+.hero-slider-section .btn,
+.hero-slide .btn,
+.hero-content-wrapper .btn,
+.hero-slide-bg .btn {
+  width: 180px !important;
+  height: 40px !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  border-radius: 0 !important; /* Remove border radius */
+  margin: 5px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: rgba(255, 255, 255, 0.2) !important; /* Semi-transparent white background */
+  backdrop-filter: blur(5px) !important; /* Add blur effect */
+  -webkit-backdrop-filter: blur(5px) !important; /* For Safari */
+  border: 2px solid rgba(255, 255, 255, 0.6) !important;
+  color: white !important;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1) !important; /* Subtle white glow */
+  transition: all 0.3s ease !important;
+}
+
+/* Hover effect for all buttons in hero slider */
+.hero-slider-section .btn:hover,
+.hero-slide .btn:hover,
+.hero-content-wrapper .btn:hover,
+.hero-slide-bg .btn:hover {
+  backdrop-filter: blur(8px) !important; /* Increase blur on hover */
+  -webkit-backdrop-filter: blur(8px) !important;
+  background-color: rgba(255, 255, 255, 0.3) !important; /* More white on hover */
+  border-color: rgba(255, 255, 255, 0.8) !important; /* More visible border on hover */
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2) !important; /* Enhanced white glow */
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .hero-slide {
+    height: 500px;
+  }
+  
+  .whats-new-text {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slide {
+    height: 450px;
+  }
+  
+  .whats-new-text {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .transparent-btn {
+    padding: 8px 16px !important;
+    font-size: 0.9rem;
+    width: 120px !important;
+    height: 40px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-slide {
+    height: 400px;
+  }
+  
+  .whats-new-text {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .transparent-btn {
+    padding: 8px 16px !important;
+    font-size: 0.8rem;
+    width: 120px !important;
+    height: 40px !important;
+  }
+}

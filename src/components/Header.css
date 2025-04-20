@@ -1,0 +1,279 @@
+/* Top bar styles */
+.top-bar {
+  background-color: #f8f9fa;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.contact-info span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-links a {
+  color: #666;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #4a90e2;
+}
+
+/* Main header styles */
+.header {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1030;
+  transition: all 0.3s ease, transform 0.4s ease;
+}
+
+/* Hide header when scrolling down */
+.header-hidden {
+  transform: translateY(-100%);
+}
+
+/* Scrolled header styles */
+.header.scrolled {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.top-header-row.hidden {
+  display: none;
+}
+
+.nav-row {
+  transition: all 0.3s ease;
+}
+
+.header.scrolled .nav-row {
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+/* Adjust brand size in scrolled header */
+.header.scrolled .brand-text {
+  font-size: 1.5rem;
+}
+
+/* Ensure logo and navigation are properly aligned when scrolled */
+.header.scrolled .navbar-collapse {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 992px) {
+  .header.scrolled .navbar-collapse {
+    margin-top: 0;
+  }
+  
+  /* Right-align the navigation links when scrolled */
+  .header.scrolled .navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Make the navbar items display in a single line when scrolled */
+  .scrolled-nav {
+    flex-grow: 1;
+  }
+}
+
+/* Add spacing for fixed header */
+body {
+  padding-top: 140px; /* Adjust based on your header height */
+}
+
+@media (max-width: 991px) {
+  body {
+    padding-top: 200px; /* Adjust for mobile */
+  }
+}
+
+/* Override Bootstrap's default flex container */
+.navbar.header > .container,
+.navbar > .container,
+header .navbar > .container,
+.header-container {
+  display: block !important;
+  flex-wrap: unset !important;
+  flex-direction: unset !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+  width: 100%;
+  max-width: 100%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #4a90e2 0%, #5637d1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.made-in-india {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #333;
+  padding: 5px;
+  height: 100%;
+  justify-content: center;
+}
+
+.made-in-india span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.made-in-india img {
+  /* filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1)); */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Search input styles */
+.search-input-group {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 75%;
+  margin: 0 auto; /* Center the search box */
+}
+
+.search-input {
+  /* border: 1px solid #e0e0e0; */
+  padding: 10px 40px; /* Equal padding on both sides for the icon */
+  font-size: 0.9rem;
+  text-align: center;
+  background-color: #dee2e6;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+.search-input:focus {
+  border: 1px solid black;
+  background-color: #dee2e6;
+  box-shadow: none;
+  outline: none;
+}
+
+.search-input::placeholder {
+  text-align: center;
+  color: #999;
+}
+
+.search-icon {
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  z-index: 10;
+}
+
+.navbar-nav .nav-link {
+  color: #333 !important;
+  font-weight: 500 !important;
+  position: relative;
+  padding: 0.5rem 0.3rem !important;
+  margin: 0 0.4rem;
+  font-size: 0.95rem;
+  transition: color 0.3s ease !important;
+  white-space: nowrap;
+  min-width: 120px !important; /* Ensure all navigation links have the same minimum width */
+  text-align: center !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #4a90e2 !important;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #4a90e2;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Special styling for text-danger removed to make all nav links consistent */
+
+.contact-btn {
+  background: linear-gradient(135deg, #4a90e2 0%, #5637d1 100%) !important;
+  border: none !important;
+  padding: 0.5rem 1.5rem !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3) !important;
+}
+
+/* Custom styling for the toggle button */
+.navbar-toggler {
+  border: none !important;
+  padding: 0.25rem 0.5rem !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .navbar-nav {
+    margin: 1rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navbar-nav .nav-link {
+    margin: 0.5rem 0;
+    padding: 0.5rem !important;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .navbar-nav .nav-link::after {
+    display: none;
+  }
+  
+  .contact-btn {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  
+  .navbar-collapse {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .made-in-india {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+  }
+}

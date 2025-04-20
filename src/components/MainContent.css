@@ -1,0 +1,37 @@
+.main-content {
+  min-height: calc(100vh - 400px); /* Adjust based on header and footer height */
+  background-color: #f8f9fa;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Custom styling for content sections */
+.main-content section {
+  margin-bottom: 3rem;
+}
+
+.main-content h2 {
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* .main-content h2:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background-color: #4a90e2;
+  bottom: -10px;
+  left: 0;
+} */
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+  .main-content {
+    min-height: calc(100vh - 500px);
+  }
+}
