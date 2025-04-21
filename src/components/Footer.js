@@ -12,17 +12,9 @@ const Footer = () => {
           <Row className="mb-4">
             <Col lg={3} md={6} className="mb-4 mb-lg-0">
               <div className="footer-widget">
-                <h4 className="widget-title">About Nialiving</h4>
-                <p className="about-text">We create beautiful, functional living spaces that reflect your personality and meet your needs.</p>
+                <h4 className="widget-title"> Nialiving</h4>
                 <div className="contact-info">
-                  <div className="contact-item mb-2">
-                    <i className="bi bi-geo-alt-fill"></i>
-                    <span>123 Design Street, New York, NY 10001</span>
-                  </div>
-                  <div className="contact-item mb-2">
-                    <i className="bi bi-telephone-fill"></i>
-                    <span>+1 (123) 456-7890</span>
-                  </div>
+                  Care@nialiving.in
                   <div className="contact-item">
                     <i className="bi bi-envelope-fill"></i>
                     <span>info@nialiving.com</span>
@@ -33,34 +25,31 @@ const Footer = () => {
             
             <Col lg={3} md={6} className="mb-4 mb-lg-0">
               <div className="footer-widget">
-                <h4 className="widget-title">Quick Links</h4>
+                
                 <Nav className="flex-column footer-links">
-                  <Nav.Link href="/" className="footer-link"><i className="bi bi-chevron-right"></i> Home</Nav.Link>
-                  <Nav.Link href="/about" className="footer-link"><i className="bi bi-chevron-right"></i> About Us</Nav.Link>
-                  <Nav.Link href="/services" className="footer-link"><i className="bi bi-chevron-right"></i> Services</Nav.Link>
-                  <Nav.Link href="/products" className="footer-link"><i className="bi bi-chevron-right"></i> Products</Nav.Link>
-                  <Nav.Link href="/contact" className="footer-link"><i className="bi bi-chevron-right"></i> Contact Us</Nav.Link>
+                  <Nav.Link href="/" className="footer-link"><i className="bi bi-chevron-right"></i> Terms and Conditions</Nav.Link>
+                  <Nav.Link href="/about" className="footer-link"><i className="bi bi-chevron-right"></i> Privacy Policy</Nav.Link>
+                  <Nav.Link href="/services" className="footer-link"><i className="bi bi-chevron-right"></i> Return Policy</Nav.Link>
+                  <Nav.Link href="/products" className="footer-link"><i className="bi bi-chevron-right"></i> Shipping Policy</Nav.Link>
+                  <Nav.Link href="/contact" className="footer-link"><i className="bi bi-chevron-right"></i> Warranty Policy</Nav.Link>
                 </Nav>
               </div>
             </Col>
             
             <Col lg={3} md={6} className="mb-4 mb-lg-0">
               <div className="footer-widget">
-                <h4 className="widget-title">Our Services</h4>
                 <Nav className="flex-column footer-links">
-                  <Nav.Link href="/services/interior-design" className="footer-link"><i className="bi bi-chevron-right"></i> Interior Design</Nav.Link>
-                  <Nav.Link href="/services/furniture" className="footer-link"><i className="bi bi-chevron-right"></i> Premium Furniture</Nav.Link>
-                  <Nav.Link href="/services/consultation" className="footer-link"><i className="bi bi-chevron-right"></i> Expert Consultation</Nav.Link>
-                  <Nav.Link href="/services/renovation" className="footer-link"><i className="bi bi-chevron-right"></i> Home Renovation</Nav.Link>
-                  <Nav.Link href="/services/decoration" className="footer-link"><i className="bi bi-chevron-right"></i> Decoration Services</Nav.Link>
+                  <Nav.Link href="/services/interior-design" className="footer-link"><i className="bi bi-chevron-right"></i> About Us</Nav.Link>
+                  <Nav.Link href="/services/furniture" className="footer-link"><i className="bi bi-chevron-right"></i> Why Us</Nav.Link>
+                  <Nav.Link href="/services/consultation" className="footer-link"><i className="bi bi-chevron-right"></i> Our Projects</Nav.Link>
+                  <Nav.Link href="/services/renovation" className="footer-link"><i className="bi bi-chevron-right"></i> FAQ</Nav.Link>
+                  <Nav.Link href="/services/decoration" className="footer-link"><i className="bi bi-chevron-right"></i> Career</Nav.Link>
                 </Nav>
               </div>
             </Col>
             
             <Col lg={3} md={6}>
               <div className="footer-widget">
-                <h4 className="widget-title">Newsletter</h4>
-                <p>Subscribe to receive updates on our latest products and special offers.</p>
                 <Form className="newsletter-form">
                   <InputGroup className="mb-3">
                     <Form.Control type="email" placeholder="Your email address" required />

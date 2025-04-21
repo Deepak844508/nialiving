@@ -2,10 +2,14 @@ import './App.css';
 import Layout from './components/Layout';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
+import './components/AccordionStyles.css';
 import NewArrivalsSlider from './components/NewArrivalsSlider';
 import HeroSlider from './components/HeroSlider';
 import FullWidthFurnitureImage from './components/FullWidthFurnitureImage';
 import './components/NewArrivalsSlider.css'; // Import for project highlights styles
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
@@ -624,7 +628,7 @@ function App() {
                <div>
                 <Card className="product-card p-0" style={{ height: '300px' }}>
                   <div className="product-badge">MADE TO ORDER</div>
-                  <Card.Img variant="top" src="https://images.unsplash.com/photo-1594319982570-8f1776a8e414?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" />
+                  <Card.Img variant="top" src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" />
                   <Card.Body className="d-flex flex-column p-0">
                     <div className="mt-auto">
                       <div className="d-flex" style={{ borderTop: '2px solid #c9c9c9' }}>
@@ -696,7 +700,7 @@ function App() {
                <div>
                 <Card className="product-card p-0" style={{ height: '300px' }}>
                   <div className="product-badge">MADE TO ORDER</div>
-                  <Card.Img variant="top" src="https://images.unsplash.com/photo-1591129841117-3adfd313a592?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" />
+                  <Card.Img variant="top" src="https://images.unsplash.com/photo-1540809799-5da9372c3f64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" />
                   <Card.Body className="d-flex flex-column p-0">
                     <div className="mt-auto">
                       <div className="d-flex" style={{ borderTop: '2px solid #c9c9c9' }}>
@@ -765,7 +769,7 @@ function App() {
                <div>
                 <Card className="product-card p-0" style={{ height: '300px' }}>
                   <div className="product-badge">MADE TO ORDER</div>
-                  <Card.Img variant="top" src="https://images.unsplash.com/photo-1567016376408-0226e4d0b1ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" />
+                  <Card.Img variant="top" src="https://images.unsplash.com/photo-1577140917170-285929fb55b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" />
                   <Card.Body className="d-flex flex-column p-0">
                     <div className="mt-auto">
                       <div className="d-flex" style={{ borderTop: '2px solid #c9c9c9' }}>
@@ -919,7 +923,7 @@ function App() {
                     <div className="arrow-right">&#10132;</div>
                   </div>
                   <div className="project-text-container">
-                    <div className="project-title">Furniture Remodelling</div>
+                    <div className="project-title">House Renovation</div>
                     <div className="project-subtitle">Company</div>
                   </div>
                 </div>
@@ -935,7 +939,7 @@ function App() {
                     <div className="arrow-right">&#10132;</div>
                   </div>
                   <div className="project-text-container">
-                    <div className="project-title">Furniture Remodelling</div>
+                    <div className="project-title">General Carpentry</div>
                     <div className="project-subtitle">Company</div>
                   </div>
                 </div>
@@ -944,128 +948,322 @@ function App() {
           </Container>
         </section>
         
-        
-        
-        {/* Testimonial Section */}
-        <section className="testimonial-section py-5">
+        {/* Story That Connect Us Section */}
+        <section className="story-connect-section py-5">
           <Container>
-            <div className="section-header text-center mb-5">
-              <span className="section-subtitle">Testimonials</span>
-              <h2 className="section-title">What Our Clients Say</h2>
-              <div className="section-divider"></div>
+            <Row className="justify-content-center">
+              <Col md={12} className="text-center mb-5">
+                <h2 className="section-title">STORY THAT CONNECT US</h2>
+                
+              </Col>
+            </Row>
+          </Container>
+          
+          <div className="category-slider-container no-slick-dots">
+            <Slider 
+              dots={false}
+              dotsClass="slick-dots custom-hide-dots"
+              infinite={true}
+              speed={500}
+              slidesToShow={4}
+              slidesToScroll={1}
+              autoplay={true}
+              arrows={true}
+              autoplaySpeed={3000}
+              cssEase="linear"
+              className="category-slider no-dots"
+              responsive={[
+                {
+                  breakpoint: 1200,
+                  settings: {
+                    slidesToShow: 3
+                  }
+                },
+                {
+                  breakpoint: 992,
+                  settings: {
+                    slidesToShow: 2
+                  }
+                },
+                {
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 1
+                  }
+                }
+              ]}
+            >
+              <div className="category-item">
+                <Card className="category-card">
+                  <Card.Body className="p-0">
+                    <Card.Img 
+                      variant="top" 
+                      src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                      className="category-image" 
+                    />
+                    <div className="category-overlay">
+                      <div className="button-wrapper">
+                        <button className="white-button">John Smith</button>
+                      </div>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </div>
+              
+              <div className="category-item">
+                <Card className="category-card">
+                  <Card.Body className="p-0">
+                    <Card.Img 
+                      variant="top" 
+                      src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                      className="category-image" 
+                    />
+                    <div className="category-overlay">
+                      <div className="button-wrapper">
+                        <button className="white-button">Emily Johnson</button>
+                      </div>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </div>
+              
+              <div className="category-item">
+                <Card className="category-card">
+                  <Card.Body className="p-0">
+                    <Card.Img 
+                      variant="top" 
+                      src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                      className="category-image" 
+                    />
+                    <div className="category-overlay">
+                      <div className="button-wrapper">
+                        <button className="white-button">Michael Chen</button>
+                      </div>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </div>
+              
+              <div className="category-item">
+                <Card className="category-card">
+                  <Card.Body className="p-0">
+                    <Card.Img 
+                      variant="top" 
+                      src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                      className="category-image" 
+                    />
+                    <div className="category-overlay">
+                      <div className="button-wrapper">
+                        <button className="white-button">Sarah Williams</button>
+                      </div>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </div>
+              
+              <div className="category-item">
+                <Card className="category-card">
+                  <Card.Body className="p-0">
+                    <Card.Img 
+                      variant="top" 
+                      src="https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                      className="category-image" 
+                    />
+                    <div className="category-overlay">
+                      <div className="button-wrapper">
+                        <button className="white-button">David Rodriguez</button>
+                      </div>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </div>
+            </Slider>
+            <div className="text-center mt-4">
+              <a href="#" className="view-all-link view-all-underlined" style={{textDecoration: 'underline'}}>View All</a>
             </div>
-            
+          </div>
+        </section>
+        
+        {/* Our Latest Articles Section */}
+        <section className="latest-articles-section py-5">
+          <Container>
+            <Row className="justify-content-center">
+              <Col md={12} className="text-center mb-5">
+                <h2 className="section-title">OUR LATEST ARTICLES</h2>
+              </Col>
+            </Row>
             <Row>
               <Col lg={4} md={6} className="mb-4">
-                <Card className="testimonial-card">
+                <Card className="article-card">
+                  <Card.Img variant="top" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" />
                   <Card.Body>
-                    <div className="testimonial-rating">
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                    </div>
-                    <Card.Text className="testimonial-text">
-                      "Nialiving transformed our living room completely. The attention to detail and quality of their products exceeded our expectations. Highly recommended!"
-                    </Card.Text>
-                    <div className="testimonial-author">
-                      <div className="testimonial-author-info">
-                        <h5 className="author-name">Sarah Johnson</h5>
-                        <p className="author-title">Homeowner</p>
-                      </div>
-                    </div>
+                    <Card.Title className="article-title">Buy Wooden Cabinets Online at the Best Prices in India</Card.Title>
+                    
+                    <Card.Text className="article-excerpt">
+                    In today’s digital world, shopping for furniture has become super easy and convenient. Whether you're setting up a new home or</Card.Text>
+                    <a href="#" className="article-link">READ MORE</a>
                   </Card.Body>
                 </Card>
               </Col>
-              
               <Col lg={4} md={6} className="mb-4">
-                <Card className="testimonial-card">
+                <Card className="article-card">
+                  <Card.Img variant="top" src="https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" />
                   <Card.Body>
-                    <div className="testimonial-rating">
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                    </div>
-                    <Card.Text className="testimonial-text">
-                      "The design consultation service was invaluable. The team listened to our needs and created a space that perfectly reflects our style while being practical for our family."
-                    </Card.Text>
-                    <div className="testimonial-author">
-                      <div className="testimonial-author-info">
-                        <h5 className="author-name">Michael Brown</h5>
-                        <p className="author-title">Business Owner</p>
-                      </div>
-                    </div>
+                    <Card.Title className="article-title">Affordable Wooden Double Beds:Where to Buy the Best Deals</Card.Title>
+                    
+                    <Card.Text className="article-excerpt">
+                    A wooden double bed is a timeless addition to any bedroom. It provides comfort, durability, and a touch of elegance to your space.                    </Card.Text>
+                    <a href="#" className="article-link">READ MORE</a>
                   </Card.Body>
                 </Card>
               </Col>
-              
-              <Col lg={4} md={12} className="mb-4">
-                <Card className="testimonial-card">
+              <Col lg={4} md={6} className="mb-4">
+                <Card className="article-card">
+                  <Card.Img variant="top" src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" />
                   <Card.Body>
-                    <div className="testimonial-rating">
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                    </div>
-                    <Card.Text className="testimonial-text">
-                      "The quality of furniture from Nialiving is outstanding. Every piece is not only beautiful but built to last. Their customer service is exceptional too!"
-                    </Card.Text>
-                    <div className="testimonial-author">
-                      <div className="testimonial-author-info">
-                        <h5 className="author-name">Emily Wilson</h5>
-                        <p className="author-title">Interior Designer</p>
-                      </div>
-                    </div>
+                    <Card.Title className="article-title">Best Wooden Dining Table Designs to Match Your Home Style</Card.Title>
+                    
+                    <Card.Text className="article-excerpt">
+                    A dining table is more than just a piece of furniture; it is the heart of your home where family and friends gather to share meals and                    </Card.Text>
+                    <a href="#" className="article-link">READ MORE</a>
                   </Card.Body>
                 </Card>
               </Col>
             </Row>
+            <div className="text-center mt-4">
+              <a href="#" className="view-all-link view-all-underlined" style={{textDecoration: 'underline'}}>View All</a>
+            </div>
           </Container>
         </section>
+        
 
         
        <section>
+       
+       <div className="text-center mb-4">
+  <h2 className="h4">Faqs</h2>
+</div>
         <Container>
         <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">
             <Accordion.Header className="w-100">
             <div className="w-100 d-flex justify-content-between align-items-center">
                 <div>Why is Niya Living?</div>
-                <div className="rotate"><i class="bi bi-arrow-right"></i></div>
+                <div className="rotate"><i className="bi bi-arrow-right"></i></div>
             </div>
             </Accordion.Header>
             <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+            Niya Living is a furniture and home decor brand that combines creativity, craftsmanship, and 
+            innovation to design unique home pieces.
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
             <Accordion.Header className="w-100">
             <div className="w-100 d-flex justify-content-between align-items-center">
-                <div>Why is Niya Living?</div>
-                <div className="rotate"><i class="bi bi-arrow-right"></i></div>
+                <div>What types of furniture does does Nia Living offer?</div>
+                <div className="rotate"><i className="bi bi-arrow-right"></i></div>
             </div>
             </Accordion.Header>
             <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+            Niya Living offers a variety of home furniture and decor items, all crafted with quality materials and designs.
             </Accordion.Body>
           </Accordion.Item>
+          <Accordion.Item eventKey="2">
+            <Accordion.Header className="w-100">
+            <div className="w-100 d-flex justify-content-between align-items-center">
+                <div>How can I place an order?</div>
+                <div className="rotate"><i className="bi bi-arrow-right"></i></div>
+            </div>
+            </Accordion.Header>
+            <Accordion.Body>
+            Orders can be placed directly through the website by selecting your preferred items and proceeding to checkout.
+
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="3">
+            <Accordion.Header className="w-100">
+            <div className="w-100 d-flex justify-content-between align-items-center">
+                <div>What payment methods are accepted?</div>
+                <div className="rotate"><i className="bi bi-arrow-right"></i></div>
+            </div>
+            </Accordion.Header>
+            <Accordion.Body>
+            Most major payment options, including credit/debit cards and UPI, are likely accepted.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="4">
+            <Accordion.Header className="w-100">
+            <div className="w-100 d-flex justify-content-between align-items-center">
+                <div>What types of wood are used in Nia Living furniture</div>
+                <div className="rotate"><i className="bi bi-arrow-right"></i></div>
+            </div>
+            </Accordion.Header>
+            <Accordion.Body>
+            Niya Living uses high-quality wood such as Acacia, sheesham, mango, and engineered wood for durability and aesthetics.
+
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="5">
+            <Accordion.Header className="w-100">
+            <div className="w-100 d-flex justify-content-between align-items-center">
+                <div>Is solid wood furniture better than engineered wood?</div>
+                <div className="rotate"><i className="bi bi-arrow-right"></i></div>
+            </div>
+            </Accordion.Header>
+            <Accordion.Body>
+            Solid wood furniture is more durable and long-lasting, while engineered wood is cost-effective and resistant to moisture.
+
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="6">
+            <Accordion.Header className="w-100">
+            <div className="w-100 d-flex justify-content-between align-items-center">
+                <div>How should I clean my wooden furniture?</div>
+                <div className="rotate"><i className="bi bi-arrow-right"></i></div>
+            </div>
+            </Accordion.Header>
+            <Accordion.Body>
+            Use a soft, damp cloth for dusting and avoid harsh chemicals or excessive water.
+
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="7">
+            <Accordion.Header className="w-100">
+            <div className="w-100 d-flex justify-content-between align-items-center">
+                <div>Is wooden furniture eco-friendly?</div>
+                <div className="rotate"><i className="bi bi-arrow-right"></i></div>
+            </div>
+            </Accordion.Header>
+            <Accordion.Body>
+            Sustainable wood sources and recycled materials make wooden furniture an eco-friendly choice.
+
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="8">
+            <Accordion.Header className="w-100">
+            <div className="w-100 d-flex justify-content-between align-items-center">
+                <div>Does Nia Living provide a warranty on wooden furniture?</div>
+                <div className="rotate"><i className="bi bi-arrow-right"></i></div>
+            </div>
+            </Accordion.Header>
+            <Accordion.Body>
+            Warranty policies depend on the product. Check with Niya Living’s customer support for specific details.
+
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="8">
+            <Accordion.Header className="w-100">
+            <div className="w-100 d-flex justify-content-between align-items-center">
+                <div>Are wooden beds durable?</div>
+                <div className="rotate"><i className="bi bi-arrow-right"></i></div>
+            </div>
+            </Accordion.Header>
+            <Accordion.Body>
+            Yes, solid wood beds last for decades and provide strong support compared to metal or engineered wood beds.
+
+            </Accordion.Body>
+          </Accordion.Item>
+              
         </Accordion>
         </Container>
        </section>

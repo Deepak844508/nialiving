@@ -21,12 +21,7 @@
   color: #333;
 }
 
-.section-divider {
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(135deg, #4a90e2 0%, #5637d1 100%);
-  margin: 0 auto 1.5rem;
-}
+
 
 .section-description {
   max-width: 700px;
@@ -315,9 +310,30 @@
   height: auto !important;
 }
 
+/* Product card styling */
+.products-section .product-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Basic image styling */
 .products-section .product-card .card-img-top {
   height: 300px;
   object-fit: cover;
+  position: relative;
+}
+
+/* Add bottom shadow to product images */
+.products-section .product-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px; /* Position above the buttons */
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5));
+  z-index: 1;
+  pointer-events: none;
 }
 .btn-shop{
   background: #ffffff00 !important;
@@ -412,12 +428,16 @@
 }
 
 .view-all-btn {
-  border-color: #4a90e2 !important;
+  border: 1px solid #4a90e2 !important;
   color: #4a90e2 !important;
   border-radius: 50px !important;
   padding: 0.8rem 2.5rem !important;
   font-weight: 500 !important;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease !important;
+  background-color: transparent !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  font-size: 1rem !important;
 }
 
 .view-all-btn:hover {
@@ -434,6 +454,115 @@
   transform: translateX(5px);
 }
 
+/* View All text link style */
+.view-all-link {
+  color: #020b16;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+.view-all-underlined {
+  text-decoration: underline;
+  text-decoration-color: #4a90e2;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+
+
+
+/* Hide slick dots for category slider */
+.no-slick-dots .slick-dots,
+.no-slick-dots ul.slick-dots {
+  display: none !important;
+}
+.category-slider .slick-dots,
+.story-connect-section .slick-dots,
+.story-connect-section .slick-slider .slick-dots,
+.story-connect-section ul.slick-dots,
+.category-slider-container .slick-dots,
+.custom-hide-dots,
+.no-dots .slick-dots {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  pointer-events: none !important;
+}
+
+/* Latest Articles Section Styles */
+.latest-articles-section {
+  background-color: #f9f9f9;
+  padding: 80px 0;
+}
+
+.article-card {
+  border: none !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  height: 100%;
+}
+
+.article-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.article-card .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.article-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+
+
+.article-excerpt {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.article-link {
+  color: #2b2c2e;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.article-link:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #4a90e2;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.article-link:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 /* New Arrivals Section Styles */
 .new-arrivals-section {
   background-color: #f8f9fa;
@@ -443,6 +572,234 @@
   color: #666;
   font-size: 0.9rem;
   line-height: 1.6;
+}
+
+/* Story Section Styles */
+.story-section {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.story-slider-container {
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.story-slider .slick-track {
+  display: flex;
+}
+
+.story-slide {
+  padding: 0 10px;
+}
+
+.story-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.story-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.story-item:hover .story-image {
+  transform: scale(1.1);
+}
+
+.story-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.story-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.story-slider .slick-dots {
+  bottom: -40px;
+}
+
+.story-slider .slick-dots li button:before {
+  font-size: 10px;
+  color: #4a90e2;
+  opacity: 0.3;
+}
+
+.story-slider .slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #4a90e2;
+}
+
+.story-slider .slick-prev,
+.story-slider .slick-next {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.story-slider .slick-prev {
+  left: -20px;
+}
+
+.story-slider .slick-next {
+  right: -20px;
+}
+
+.story-slider .slick-prev:before,
+.story-slider .slick-next:before {
+  color: #4a90e2;
+  font-size: 20px;
+}
+
+
+
+/* Story That Connect Us Section Styles */
+.story-connect-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.story-connect-section .category-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.story-connect-section .category-card .card-body {
+  padding: 0 !important;
+  position: relative !important;
+  height: 300px !important;
+  overflow: hidden !important;
+}
+
+.story-connect-section .category-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Custom overlay for story section */
+.story-connect-section .category-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), transparent);
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: block !important;
+  pointer-events: none;
+}
+
+/* Make the button clickable inside the overlay */
+.story-connect-section .category-overlay .btn {
+  pointer-events: auto;
+}
+
+.story-connect-section .category-card:hover .category-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+}
+
+/* Customer button styles */
+.white-button {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #333 !important;
+  border: none !important;
+  border-radius: 5px !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 10 !important;
+  margin: 0 !important;
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: auto !important;
+  white-space: normal !important;
+  text-align: center !important;
+  line-height: 1.5 !important;
+  cursor: pointer !important;
+  outline: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+}
+
+/* Force the button to be at the bottom */
+.story-connect-section .category-overlay {
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Button wrapper for positioning */
+.button-wrapper {
+  position: absolute !important;
+  bottom: 20px !important;
+  left: 20px !important;
+  z-index: 10 !important;
+}
+
+/* Override any fixed width styles for story customer buttons */
+.story-connect-section .button-wrapper .story-customer-btn,
+.story-connect-section .category-overlay .story-customer-btn,
+.story-connect-section .category-card .story-customer-btn,
+.story-connect-section [class*="category"] .story-customer-btn {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: auto !important;
+  white-space: normal !important;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+.white-button:hover {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+@media (max-width: 768px) {
+  .story-customer-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    bottom: 15px;
+    left: 50%;
+  }
 }
 
 /* Testimonial Section Styles */
@@ -487,6 +844,9 @@
 .accordion-button{
   background: #ffffff;
   color: #1f1f1f;
+}
+.faq{
+  align-items: center;
 }
 .accordion-button:not(.collapsed) {
   background: #5a738f;
@@ -565,11 +925,12 @@ button[class*="bathroom"] {
   padding: 8px 16px !important; /* Consistent padding */
   font-size: 14px !important; /* Consistent font size */
   line-height: 1.5 !important; /* Consistent line height */
-  border-radius: 4px !important; /* Consistent border radius */
+  border-radius: 0 !important; /* No border radius for shop by category buttons */
   margin: 5px !important; /* Consistent margin */
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  background: transparent !important; /* Transparent background */
 }
 
 /* Additional specific styling for buttons on category images */
@@ -595,7 +956,7 @@ button[class*="bathroom"] {
 .outdoor-category .btn,
 .kitchen-category .btn,
 .decor-category .btn {
-  width: 120px !important;
+  width: 180px !important;
   height: 40px !important;
   padding: 8px 16px !important;
   font-size: 14px !important;
@@ -699,20 +1060,19 @@ button[class*="bathroom"],
 .outdoor-category .btn,
 .kitchen-category .btn,
 .decor-category .btn {
-  width: 120px !important; /* Fixed width instead of min-width */
-  height: 40px !important; /* Fixed height to match bathroom button */
+  width: 180px !important; /* Fixed width instead of min-width */
+  height: 50px !important; /* Fixed height to match bathroom button */
   padding: 8px 16px !important; /* Consistent padding */
   font-size: 14px !important; /* Consistent font size */
   line-height: 1.5 !important; /* Consistent line height */
-  border-radius: 4px !important; /* Consistent border radius */
+  border-radius: 0px solid white!important; /* Consistent border radius */
   margin: 5px !important; /* Consistent margin */
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   position: relative !important;
   z-index: 10 !important;
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  color: #333 !important;
+  color: white !important;
   border: 1px solid #ddd !important;
   transition: all 0.3s ease !important;
   text-transform: capitalize !important;

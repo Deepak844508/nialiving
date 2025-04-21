@@ -1,0 +1,13 @@
+/* Accordion Styles */
+.rotate i {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.accordion-button.collapsed .rotate i {
+  transform: rotate(0deg);
+}
+
+.accordion-button:not(.collapsed) .rotate i {
+  transform: rotate(90deg);
+}

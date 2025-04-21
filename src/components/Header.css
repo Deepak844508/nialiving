@@ -59,6 +59,13 @@
   font-size: 1.5rem;
 }
 
+.header.scrolled .brand-logo {
+  width: 25px;
+  height: 25px;
+}
+
+
+
 /* Ensure logo and navigation are properly aligned when scrolled */
 .header.scrolled .navbar-collapse {
   margin-top: 0.5rem;
@@ -69,10 +76,10 @@
     margin-top: 0;
   }
   
-  /* Right-align the navigation links when scrolled */
+  /* Center the navigation links when scrolled */
   .header.scrolled .navbar-nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
   }
   
   /* Make the navbar items display in a single line when scrolled */
@@ -122,6 +129,45 @@ header .navbar > .container,
   background-clip: text;
 }
 
+
+
+.brand-logo {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  transition: transform 0.3s ease;
+}
+
+.brand:hover .brand-logo {
+  transform: scale(1.1);
+}
+
+.header-elements-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.header-logo, .header-search, .header-made-in-india {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  flex: 0 0 auto;
+  margin-right: 15px;
+}
+
+.header-search {
+  flex: 1 1 auto;
+  max-width: 50%;
+}
+
+.header-made-in-india {
+  flex: 0 0 auto;
+  margin-left: 15px;
+}
+
 .made-in-india {
   display: flex;
   flex-direction: column;
@@ -149,8 +195,7 @@ header .navbar > .container,
 .search-input-group {
   border-radius: 10px;
   overflow: hidden;
-  width: 75%;
-  margin: 0 auto; /* Center the search box */
+  width: 100%;
 }
 
 .search-input {
@@ -162,6 +207,7 @@ header .navbar > .container,
   border: none;
   outline: none;
   border-radius: 10px;
+  width: 100%;
 }
 
 .search-input:focus {
@@ -184,16 +230,22 @@ header .navbar > .container,
   z-index: 10;
 }
 
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem; /* Use gap for consistent spacing between all items */
+}
+
 .navbar-nav .nav-link {
   color: #333 !important;
   font-weight: 500 !important;
   position: relative;
-  padding: 0.5rem 0.3rem !important;
-  margin: 0 0.4rem;
+  padding: 0.5rem 0.2rem !important;
+  margin: 0; /* Remove margin since we're using gap */
   font-size: 0.95rem;
   transition: color 0.3s ease !important;
   white-space: nowrap;
-  min-width: 120px !important; /* Ensure all navigation links have the same minimum width */
   text-align: center !important;
 }
 
@@ -207,14 +259,17 @@ header .navbar > .container,
   width: 0;
   height: 2px;
   bottom: 0;
-  left: 0;
+  left: 50%;
   background-color: #4a90e2;
   transition: width 0.3s ease;
+  transform: translateX(-50%);
 }
 
 .navbar-nav .nav-link:hover::after {
   width: 100%;
 }
+
+
 
 /* Special styling for text-danger removed to make all nav links consistent */
 
@@ -249,10 +304,13 @@ header .navbar > .container,
     margin: 1rem 0;
     width: 100%;
     text-align: center;
+    justify-content: center;
+    gap: 0.5rem; /* Smaller gap for mobile */
+    flex-direction: column;
   }
   
   .navbar-nav .nav-link {
-    margin: 0.5rem 0;
+    margin: 0;
     padding: 0.5rem !important;
     border-bottom: 1px solid #f0f0f0;
   }
@@ -271,9 +329,86 @@ header .navbar > .container,
     overflow-y: auto;
   }
   
+  /* Keep header elements in one line even on smaller screens */
+  .header-elements-wrapper {
+    flex-wrap: nowrap;
+    padding: 0 10px;
+  }
+  
+  .header-logo {
+    flex: 0 0 auto;
+    margin-right: 10px;
+  }
+  
+  .header-search {
+    flex: 1 1 auto;
+    max-width: 40%;
+  }
+  
+  .header-made-in-india {
+    flex: 0 0 auto;
+    margin-left: 10px;
+  }
+  
+  .brand-text {
+    font-size: 1.5rem;
+  }
+  
   .made-in-india {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
     justify-content: center;
+  }
+  
+  .made-in-india img {
+    width: 60px;
+    height: 45px;
+  }
+  
+  .made-in-india span {
+    font-size: 0.7rem;
+  }
+  
+  .search-input {
+    padding: 8px 30px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 575px) {
+  .header-elements-wrapper {
+    padding: 0 5px;
+  }
+  
+  .header-logo {
+    margin-right: 5px;
+  }
+  
+  .header-made-in-india {
+    margin-left: 5px;
+  }
+  
+  .brand-text {
+    font-size: 1.2rem;
+  }
+  
+  .made-in-india img {
+    width: 50px;
+    height: 38px;
+  }
+  
+  .made-in-india span {
+    font-size: 0.6rem;
+    margin-top: 2px;
+  }
+  
+  .search-input {
+    padding: 6px 25px;
+    font-size: 0.75rem;
+  }
+  
+  .search-icon {
+    left: 8px;
   }
 }

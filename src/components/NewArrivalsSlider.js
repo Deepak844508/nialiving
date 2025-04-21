@@ -42,7 +42,7 @@ const NewArrivalsSlider = () => {
       reviews: 18,
       image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       badge: null,
-      btnText: "BATHROOM"
+      btnText: "HOME OFFICE"
     },
     {
       id: 4,
@@ -87,31 +87,58 @@ const NewArrivalsSlider = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 4, // Changed from 3 to 4 as requested
     slidesToScroll: 1,
     autoplay: true,
-    arrows: false,
+    arrows: true, // Enable navigation arrows
     autoplaySpeed: 3000,
+    cssEase: 'linear',
+    variableWidth: false,
+    centerMode: false,
+    swipeToSlide: true,
+    touchThreshold: 10,
+    centerPadding: '0px',
+    slidesMargin: 10,
+    slidesToFit: true,
+    margin: 10,
+    padding: 0,
+    gutter: 10,
+    slidesSpacing: 10,
     responsive: [
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1
+          slidesToShow: 3, // Show 3 on large screens
+          slidesToScroll: 1,
+          centerPadding: '0px',
+          margin: 10,
+          padding: 0,
+          gutter: 10,
+          slidesSpacing: 10
         }
       },
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToShow: 2, // Show 2 on medium screens
+          slidesToScroll: 1,
+          centerPadding: '0px',
+          margin: 10,
+          padding: 0,
+          gutter: 10,
+          slidesSpacing: 10
         }
       },
       {
-        breakpoint: 576,
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToShow: 1, // Show 1 on small screens
+          slidesToScroll: 1,
+          centerPadding: '0px',
+          margin: 10,
+          padding: 0,
+          gutter: 10,
+          slidesSpacing: 10
         }
       }
     ]
@@ -143,27 +170,24 @@ const NewArrivalsSlider = () => {
 
   return (
     <>
-      <section className="new-arrivals-slider-section py-5">
-        <div className="container">
-          <div className="section-header text-center mb-5">
-            <h2 className="section-title">SHOP BY CATEGORY</h2>
-          </div>
-          
-          <Slider {...settings} className="new-arrivals-slider">
+      <section className="category-section">
+        <Container>
+          <Row className="justify-content-center">
+            <Col md={12} className="text-center mb-5">
+              <h2 className="section-title">SHOP BY CATEGORY</h2>
+            </Col>
+          </Row>
+        </Container>
+        
+        <div className="category-slider-container">
+          <Slider {...settings} className="category-slider">
             {newArrivals.map(product => (
-              <div key={product.id} className="slider-item px-2">
-                <Card className="product-card">
-                  {/* {product.badge && (
-                    <div className={`product-badge ${product.badge === 'Sale' ? 'bg-danger' : product.badge === 'Bestseller' ? 'bg-success' : ''}`}>
-                      {product.badge}
-                    </div>
-                  )} */}
+              <div key={product.id} className="category-item">
+                <Card className="category-card">
                   <Card.Body className="p-0">
-                  <Card.Img variant="top" src={product.image} />
-                    {/* <div className="product-category">{product.category}</div> */}
-                    
-                    <div className="hero-content-wrapper">
-                        <Button className="transparent-btn animate-up animate-delay">{product.btnText}</Button>
+                    <Card.Img variant="top" src={product.image} className="category-image" />
+                    <div className="category-overlay">
+                      <Button className="category-btn no-border-radius">{product.btnText}</Button>
                     </div>
                   </Card.Body>
                 </Card>
@@ -172,8 +196,6 @@ const NewArrivalsSlider = () => {
           </Slider>
         </div>
       </section>
-
-      
     </>
   );
 };

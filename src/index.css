@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Global override to hide slick dots in the story connect section */
+.story-connect-section .slick-dots {
+  display: none !important;
+}

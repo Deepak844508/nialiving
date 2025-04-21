@@ -1,37 +1,124 @@
 .new-arrivals-slider-section {
   background-color: #f9f9f9;
+  overflow: hidden; /* Prevent any potential overflow */
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100vw !important; /* Force full viewport width */
+  max-width: 100vw !important;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+/* Full width container for slider */
+.full-width-slider-container {
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.new-arrivals-slider {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .new-arrivals-slider .slick-track {
   display: flex;
-  padding: 20px 0;
+  padding: 0;
+  margin: 0;
+  width: 100% !important;
+}
+
+.new-arrivals-slider .slick-list {
+  overflow: visible;
+  margin: 0;
+  padding: 0 !important;
+  width: 100vw;
+  max-width: 100vw;
 }
 
 .new-arrivals-slider .slick-slide {
   height: inherit;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
 }
 
 .new-arrivals-slider .slick-slide > div {
   height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
 }
 
 .slider-item {
   height: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.full-width-image {
+  width: 100%;
+  height: 300px; /* Match the height from OUR LATEST PRODUCTS section */
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  display: block;
+  border-radius: 0 !important; /* Ensure no border radius */
+}
+
+.category-image {
+  width: 100%;
+  height: 300px; /* Match the height from OUR LATEST PRODUCTS section */
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  display: block;
+  border-radius: 5px !important; /* 5px border radius as requested */
+  transition: transform 0.5s ease; /* Add transition for smooth scaling */
+}
+
+.category-card:hover .category-image {
+  transform: scale(1.1); /* Scale the image on hover */
+}
+
+.no-border-radius {
+  border-radius: 0 !important;
 }
 
 /* Product card styling */
 .product-card {
   border: none;
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific styling for category cards */
+.new-arrivals-slider .product-card {
+  height: auto;
+  width: 100%;
 }
 
 .product-badge {
@@ -96,15 +183,18 @@
 }
 .hero-content-wrapper {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 5;
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
 }
 .buy-now-btn, .add-to-cart-btn {
   border-radius: 4px;
@@ -199,13 +289,17 @@
   color: #666;
   font-size: 1rem;
 }
-.product-card {
+.product-card, .category-card {
   transition: transform .2s; 
-  height: 400px;
+  height: auto !important;
 }
 
 .product-card:hover {
-  transform: scale(1.02); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(1.02);
+}
+
+.category-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 /* Animation for elements coming from bottom */
 @keyframes slideUp {
@@ -250,12 +344,12 @@
 
 .transparent-btn {
   background-color: transparent !important;
-  border: 2px solid white !important;
+  border: 3px solid white !important;
   color: white !important;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  padding: 0.75rem 2rem;
+  letter-spacing: 2px;
+  padding: 1rem 2.5rem;
   display: block;
   margin-top: 1rem;
   border-radius: 0 !important; /* Remove border radius */
@@ -263,6 +357,7 @@
   overflow: hidden;
   z-index: 1;
   transition: color 0.3s ease !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .transparent-btn::before {
@@ -443,6 +538,160 @@
   transform: translateY(0);
 }
 
+/* Category section specific styling */
+.category-section {
+  background-color: #f9f9f9;
+  overflow: hidden;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100%;
+  position: relative;
+}
+
+.category-slider-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.category-slider {
+  margin: 0;
+  padding: 0 10px; /* Add horizontal padding to the slider */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Navigation arrows for category slider */
+.category-slider .slick-prev,
+.category-slider .slick-next {
+  width: 40px;
+  height: 40px;
+  background-color: white; /* White circular background */
+  border-radius: 50%; /* Make it a perfect circle */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.category-slider .slick-prev {
+  left: 20px; /* Position on the left edge */
+}
+
+.category-slider .slick-next {
+  right: 20px; /* Position on the right edge */
+}
+
+.category-slider .slick-prev:before,
+.category-slider .slick-next:before {
+  color: black; /* Black arrow color */
+  font-size: 12px; /* Good size for visibility */
+  opacity: 1;
+}
+
+.category-slider .slick-prev:hover,
+.category-slider .slick-next:hover {
+  background-color: white; /* Keep white on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.category-item {
+  height: 100%;
+  padding: 0 5px !important; /* Add 5px padding on each side to create 10px gap between items */
+  margin: 0 !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.category-card {
+  border: none;
+  border-radius: 5px; /* 5px border radius as requested */
+  overflow: hidden;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  height: auto !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 5;
+  overflow: hidden;
+  background: transparent; /* Start with transparent background */
+  transition: background 0.5s ease; /* Smooth transition for background */
+}
+
+.category-card:hover .category-overlay {
+  background: rgba(0, 0, 0, 0.3); /* Add semi-transparent overlay on hover */
+}
+
+.category-btn {
+  background-color: transparent !important; /* Completely transparent background */
+  backdrop-filter: blur(8px) !important; /* Increased blur effect */
+  -webkit-backdrop-filter: blur(8px) !important; /* For Safari */
+  border: 1px solid white !important; /* 1px solid white as requested */
+  color: black !important; /* Changed from white to black */
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 8px 16px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 1rem;
+  border-radius: 0 !important; /* Remove border radius */
+  -webkit-border-radius: 0 !important; /* For Safari */
+  -moz-border-radius: 0 !important; /* For Firefox */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease !important;
+  width: 180px !important; /* 180px width as requested */
+  height: 40px !important;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1) !important; /* Subtle white glow */
+}
+
+.category-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: height 0.3s ease;
+  z-index: -1;
+}
+
+.category-btn:hover::before {
+  height: 100%;
+}
+
+.category-btn:hover,
+.category-btn:focus,
+.category-btn:active {
+  color: black !important; /* Changed from white to black */
+  backdrop-filter: blur(12px) !important; /* Further increase blur on hover */
+  -webkit-backdrop-filter: blur(12px) !important;
+  background-color: transparent !important; /* Keep background transparent on hover */
+  border-color: white !important; /* Keep solid white border */
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3) !important; /* Enhanced white glow */
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .new-arrivals-slider .slick-prev {
@@ -451,6 +700,24 @@
   
   .new-arrivals-slider .slick-next {
     right: -10px;
+  }
+  
+  /* Responsive styling for category slider arrows */
+  .category-slider .slick-prev {
+    left: 10px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .category-slider .slick-next {
+    right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .category-slider .slick-prev:before,
+  .category-slider .slick-next:before {
+    font-size: 22px; /* Slightly smaller on medium screens */
   }
   
   .project-highlight-item {
@@ -462,6 +729,26 @@
   .new-arrivals-slider .slick-prev,
   .new-arrivals-slider .slick-next {
     display: none !important;
+  }
+  
+  /* Keep category slider arrows visible but smaller on mobile */
+  .category-slider .slick-prev,
+  .category-slider .slick-next {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .category-slider .slick-prev {
+    left: 5px;
+  }
+  
+  .category-slider .slick-next {
+    right: 5px;
+  }
+  
+  .category-slider .slick-prev:before,
+  .category-slider .slick-next:before {
+    font-size: 20px; /* Slightly smaller on mobile screens */
   }
   
   .section-title {

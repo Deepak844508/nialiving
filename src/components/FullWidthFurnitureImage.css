@@ -56,8 +56,8 @@
   overflow: hidden;
   z-index: 1;
   transition: all 0.3s ease;
-  width: 180px;
-  height: 40px;
+  width: 180px !important;
+  height: 50px !important; /* Updated to 50px height */
   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
 
@@ -98,7 +98,7 @@
   
   .furniture-button-container .transparent-btn {
     width: 180px;
-    height: 38px;
+    height: 50px; /* Keep 50px height on medium screens */
     font-size: 0.85rem;
   }
 }
@@ -119,7 +119,7 @@
   
   .furniture-button-container .transparent-btn {
     width: 180px;
-    height: 36px;
+    height: 45px; /* Slightly smaller on tablets but still prominent */
     font-size: 0.8rem;
   }
 }
@@ -141,7 +141,7 @@
   
   .furniture-button-container .transparent-btn {
     width: 180px;
-    height: 34px;
+    height: 40px; /* Smaller on mobile but still easy to tap */
     font-size: 0.75rem;
     padding: 6px 12px;
   }
